@@ -3,38 +3,237 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Norme sulla Privacy - RegistraLaPillola</title>
+    <title>Privacy Policy & Data Deletion - MedTracker / RegistraLaPillola</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; }
-        h1, h2 { color: #0288d1; }
-        .card { background: #f9f9f9; border-left: 4px solid #0288d1; padding: 15px; margin-bottom: 20px; border-radius: 4px; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+            line-height: 1.6; 
+            color: #2c3e50; 
+            max-width: 850px; 
+            margin: 0 auto; 
+            padding: 20px; 
+            background-color: #f8f9fa;
+        }
+        .container {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .lang-picker {
+            display: flex;
+            justify-content: flex-end;
+            gap: 8px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+        .lang-btn {
+            background: #edf2f7;
+            border: 1px solid #cbd5e1;
+            padding: 6px 14px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            color: #475569;
+            transition: all 0.2s ease;
+        }
+        .lang-btn:hover { background: #e2e8f0; }
+        .lang-btn.active {
+            background: #0288d1;
+            color: #ffffff;
+            border-color: #0288d1;
+        }
+        h1 { color: #0288d1; font-size: 26px; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-top: 0; }
+        h2 { color: #1e293b; font-size: 18px; margin-top: 25px; }
+        .author { color: #64748b; font-style: italic; margin-bottom: 20px; }
+        .card-box { 
+            background: #f0f9ff; 
+            border-left: 4px solid #0288d1; 
+            padding: 15px 20px; 
+            margin: 20px 0; 
+            border-radius: 0 8px 8px 0; 
+        }
+        .deletion-box {
+            background: #fff7ed;
+            border-left: 4px solid #f97316;
+            padding: 15px 20px;
+            margin-top: 35px;
+            border-radius: 0 8px 8px 0;
+        }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 8px; }
+        .lang-content { display: none; }
+        .lang-content.active { display: block; }
     </style>
 </head>
 <body>
-    <h1>Norme sulla Privacy - RegistraLaPillola</h1>
-    <p><em>Alias MedTracker — A cura di Giuseppe Giudice</em></p>
 
-    <div class="card">
-        <p>L'applicazione <strong>RegistraLaPillola</strong> mette al primo posto la sicurezza e la riservatezza dei tuoi dati.</p>
+<div class="container">
+    <!-- Selector de Idioma / Language Selector -->
+    <div class="lang-picker">
+        <button class="lang-btn" onclick="setLanguage('it')" id="btn-it">🇮🇹 Italiano</button>
+        <button class="lang-btn" onclick="setLanguage('en')" id="btn-en">🇬🇧 English</button>
+        <button class="lang-btn" onclick="setLanguage('es')" id="btn-es">🇪🇸 Español</button>
+        <button class="lang-btn" onclick="setLanguage('fr')" id="btn-fr">🇫🇷 Français</button>
     </div>
 
-    <h2>1. Dati Sanitari e Personali (Locali)</h2>
-    <p>Tutti i dati sensibili inseriti dall'utente — inclusi nomi dei farmaci, dosaggi, orari di assunzione, note personali e fotografie dei medicinali — vengono salvati esclusivamente nella memoria locale del tuo dispositivo (database protetto). Lo sviluppatore non ha accesso a queste informazioni, che non vengono mai trasmesse, vendute o memorizzate su server remoti.</p>
+    <!-- ITALIANO -->
+    <div id="lang-it" class="lang-content">
+        <h1>Norme sulla Privacy - RegistraLaPillola</h1>
+        <div class="author">L'applicazione RegistraLaPillola - alias MedTracker - (di Giuseppe Giudice) mette al primo posto la sicurezza e la riservatezza dei tuoi dati.[cite: 1]</div>
 
-    <h2>2. Raccolta Dati Tecnici e Statistici (Anonimi)</h2>
-    <p>Per garantire il corretto funzionamento dell'app e migliorare l'esperienza utente, utilizziamo i servizi Google Firebase:</p>
-    <ul>
-        <li><strong>Firebase Crashlytics:</strong> In caso di errore critico (crash), viene inviato un rapporto tecnico anonimo per aiutarci a risolvere il bug.</li>
-        <li><strong>Google Analytics for Firebase:</strong> Raccogliamo statistiche d'uso aggregate e completamente anonime per capire quali funzionalità sono più utilizzate. Nessuno di questi dati può identificarti personalmente o rivelare informazioni sulla tua terapia.</li>
-    </ul>
+        <h2>1. Dati Sanitari e Personali (Locali)</h2>
+        <p>Tutti i dati sensibili inseriti dall'utente — inclusi nomi dei farmaci, dosaggi, orari di assunzione, note personali e fotografie dei medicinali — vengono salvati esclusivamente nella memoria locale del tuo dispositivo (database protetto). Lo sviluppatore non ha accesso a queste informazioni, che non vengono mai trasmesse, vendute o memorizzate su server remoti.[cite: 1]</p>
 
-    <h2>3. Servizi di Pagamento e Donazioni</h2>
-    <p>Le donazioni effettuate tramite la funzione "Offrimi un caffè" sono gestite interamente da Google Play Billing. L'applicazione non ha accesso, non raccoglie e non memorizza i tuoi dati di pagamento o della tua carta di credito.</p>
+        <h2>2. Raccolta Dati Tecnici e Statistici (Anonimi)</h2>
+        <p>Per garantire il corretto funzionamento dell'app e migliorare l'esperienza utente, utilizziamo i servizi Google Firebase:[cite: 1]</p>
+        <ul>
+            <li><strong>Firebase Crashlytics:</strong> In caso di errore critico (crash), viene inviato un rapporto tecnico anonimo per aiutarci a risolvere il bug.[cite: 1]</li>
+            <li><strong>Google Analytics for Firebase:</strong> Raccogliamo statistiche d'uso aggregate e completamente anonime per capire quali funzionalità sono più utilizzate. Nessuno di questi dati può identificarti personalmente o rivelare informazioni sulla tua terapia.[cite: 1]</li>
+        </ul>
 
-    <h2>4. Permessi Richiesti</h2>
-    <p>L'app richiede l'accesso alla fotocamera (solo per scattare foto ai farmaci), alla memoria (per il backup dei dati) e al sistema di allarmi (per inviare le notifiche). Questi permessi sono utilizzati esclusivamente per le finalità descritte.</p>
+        <h2>3. Servizi di Pagamento e Donazioni</h2>
+        <p>Le donazioni effettuate tramite la funzione "Offrimi un caffè" sono gestite interamente da Google Play Billing. L'applicazione non ha accesso, non raccoglie e non memorizza i tuoi dati di pagamento o della tua carta di credito.[cite: 1]</p>
 
-    <h2>5. Eliminazione dei Dati</h2>
-    <p>Trattandosi di un salvataggio locale, l'utente ha il controllo totale sui propri dati. Disinstallando l'applicazione, tutti i dati sanitari e le immagini memorizzate verranno rimosse definitivamente dal dispositivo.</p>
+        <h2>4. Permessi Richiesti</h2>
+        <p>L'app richiede l'accesso alla fotocamera (solo per scattare foto ai farmaci), alla memoria (per il backup dei dati) e al sistema di allarmi (per inviare le notifiche). Questi permessi sono utilizzati esclusivamente per le finalità descritte.[cite: 1]</p>
+
+        <h2>5. Eliminazione dei Dati</h2>
+        <p>Trattandosi di un salvataggio locale, l'utente ha il controllo totale sui propri dati. Disinstallando l'applicazione, tutti i dati sanitari e le immagini memorizzate verranno rimosse definitivamente dal dispositivo.[cite: 1]</p>
+
+        <div class="deletion-box">
+            <h2 style="margin-top:0; color: #c2410c;">Come richiedere o eseguire l'eliminazione dei dati</h2>
+            <p>Poiché l'app non conserva dati su server esterni, non occorre inviare una richiesta scritta. Per eliminare istantaneamente tutti i dati sanitari e le impostazioni:[cite: 1]</p>
+            <ul>
+                <li>Disinstalla l'applicazione dal tuo dispositivo.[cite: 1]</li>
+                <li>Oppure vai su <em>Impostazioni dispositivo &gt; App &gt; RegistraLaPillola &gt; Spazio di Archiviazione &gt; Cancella Dati</em>.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- ENGLISH -->
+    <div id="lang-en" class="lang-content">
+        <h1>Privacy Policy - MedTracker</h1>
+        <div class="author">The MedTracker application - “RegistraLaPillola” in Italian - (by Giuseppe Giudice) prioritizes the security and confidentiality of your data.[cite: 1]</div>
+
+        <h2>1. Health and Personal Data (Local)</h2>
+        <p>All sensitive data entered by the user — including medication names, dosages, intake schedules, personal notes, and photos of medications — is saved exclusively in your device's local memory (protected database). The developer has no access to this information, which is never transmitted, sold, or stored on remote servers.[cite: 1]</p>
+
+        <h2>2. Technical and Statistical Data Collection (Anonymous)</h2>
+        <p>To ensure the app functions correctly and to improve the user experience, we use Google Firebase services:[cite: 1]</p>
+        <ul>
+            <li><strong>Firebase Crashlytics:</strong> In the event of a critical error (crash), an anonymous technical report is sent to help us fix the bug.[cite: 1]</li>
+            <li><strong>Google Analytics for Firebase:</strong> We collect aggregated and completely anonymous usage statistics to understand which features are most used. None of this data can personally identify you or reveal information about your therapy.[cite: 1]</li>
+        </ul>
+
+        <h2>3. Payment Services and Donations</h2>
+        <p>Donations made via the "Offer me a coffee" feature are handled entirely by Google Play Billing. The application does not access, collect, or store your payment or credit card details.[cite: 1]</p>
+
+        <h2>4. Required Permissions</h2>
+        <p>The app requires access to the camera (only for taking medication photos), storage (for data backup), and the alarm system (for sending notifications). These permissions are used exclusively for the described purposes.[cite: 1]</p>
+
+        <h2>5. Data Deletion</h2>
+        <p>Since all data is stored locally, the user has full control. Uninstalling the application will permanently remove all health data and stored images from the device.[cite: 1]</p>
+
+        <div class="deletion-box">
+            <h2 style="margin-top:0; color: #c2410c;">Data Deletion Request & Instructions</h2>
+            <p>Since MedTracker does not store any personal or health data on external cloud servers, manual deletion requests are not required. To delete all your data instantly:[cite: 1]</p>
+            <ul>
+                <li>Uninstall the application from your device.[cite: 1]</li>
+                <li>Or go to <em>Device Settings &gt; Apps &gt; MedTracker &gt; Storage &gt; Clear Data</em>.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- ESPAÑOL -->
+    <div id="lang-es" class="lang-content">
+        <h1>Política de Privacidad - MedTracker</h1>
+        <div class="author">La aplicación MedTracker - “RegistraLaPillola” en italiano - (de Giuseppe Giudice) prioriza la seguridad y la confidencialidad de sus datos.[cite: 1]</div>
+
+        <h2>1. Datos Personales y de Salud (Locales)</h2>
+        <p>Todos los datos sensibles introducidos por el usuario —incluyendo nombres de medicamentos, dosis, horarios de toma, notas personales y fotografías de medicinas— se guardan exclusivamente en la memoria local de su dispositivo (base de datos protegida). El desarrollador no tiene acceso a esta información, que nunca se transmite, vende ni almacena en servidores remotos.[cite: 1]</p>
+
+        <h2>2. Recopilación de Datos Técnicos y Estadísticos (Anónimos)</h2>
+        <p>Para garantizar el correcto funcionamiento de la aplicación y mejorar la experiencia del usuario, utilizamos los servicios de Google Firebase:[cite: 1]</p>
+        <ul>
+            <li><strong>Firebase Crashlytics:</strong> En caso de error crítico (crash), se envía un informe técnico anónimo para ayudarnos a solucionar el problema.[cite: 1]</li>
+            <li><strong>Google Analytics for Firebase:</strong> Recopilamos estadísticas de uso agregadas y completamente anónimas para entender qué funciones se utilizan más. Ninguno de estos datos puede identificarle personalmente ni revelar información sobre su terapia.[cite: 1]</li>
+        </ul>
+
+        <h2>3. Servicios de Pago y Donaciones</h2>
+        <p>Las donaciones realizadas a través de la función "Invítame a un café" son gestionadas íntegramente por Google Play Billing. La aplicación no accede, recopila ni almacena sus datos de pago o de su tarjeta de crédito.[cite: 1]</p>
+
+        <h2>4. Permisos Requeridos</h2>
+        <p>La aplicación requiere acceso a la cámara (solo para fotos de medicamentos), al almacenamiento (para la copia de seguridad) y al sistema de alarmas (para notificaciones). Estos permisos se utilizan exclusivamente para los fines descritos.[cite: 1]</p>
+
+        <h2>5. Eliminación de Datos</h2>
+        <p>Al tratarse de un almacenamiento local, el usuario tiene el control total de sus datos. Al desinstalar la aplicación, todos los datos de salud e imágenes almacenados se eliminarán permanentemente del dispositivo.[cite: 1]</p>
+
+        <div class="deletion-box">
+            <h2 style="margin-top:0; color: #c2410c;">Instrucciones para la Eliminación de Datos</h2>
+            <p>Dado que la aplicación no almacena datos en servidores externos, no es necesario enviar una solicitud manual. Para eliminar todos sus datos inmediatamente:[cite: 1]</p>
+            <ul>
+                <li>Desinstale la aplicación de su dispositivo.[cite: 1]</li>
+                <li>O vaya a <em>Ajustes del dispositivo &gt; Aplicaciones &gt; MedTracker &gt; Almacenamiento &gt; Borrar datos</em>.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- FRANÇAIS -->
+    <div id="lang-fr" class="lang-content">
+        <h1>Politique de Confidentialité - MedTracker</h1>
+        <div class="author">L'application MedTracker - “RegistraLaPillola” en italien - (de Giuseppe Giudice) accorde la priorité à la sécurité et à la confidentialité de vos données.[cite: 1]</div>
+
+        <h2>1. Données de Santé et Personnelles (Locales)</h2>
+        <p>Toutes les données sensibles saisies par l'utilisateur — y compris les noms des médicaments, les dosages, les horaires de prise, les notes personnelles et les photos des médicaments — sont enregistrées exclusivement dans la mémoire locale de votre appareil (base de données protégée). Le développeur n'a pas accès à ces informations, qui ne sont jamais transmises, vendues ou stockées sur des serveurs distants.[cite: 1]</p>
+
+        <h2>2. Collecte de Données Techniques et Statistiques (Anonymes)</h2>
+        <p>Pour garantir le bon fonctionnement de l'application et améliorer l'expérience utilisateur, nous utilisons les services Google Firebase :[cite: 1]</p>
+        <ul>
+            <li><strong>Firebase Crashlytics :</strong> En cas d'erreur critique (crash), un rapport technique anonyme est envoyé pour nous aider à corriger le bug.[cite: 1]</li>
+            <li><strong>Google Analytics for Firebase :</strong> Nous collectons des statistiques d'utilisation agrégées et totalement anonymes pour comprendre quelles fonctionnalités sont les plus utilisées. Aucune de ces données ne peut vous identifier personnellement ou révéler des informations sur votre thérapie.[cite: 1]</li>
+        </ul>
+
+        <h2>3. Services de Paiement et Dons</h2>
+        <p>Les dons effectués via la fonction « Offrez-moi un café » sont entièrement gérés par Google Play Billing. L'application n'accède pas à vos coordonnées de paiement ou de carte de crédit, ne le collecte pas et ne le stocke pas.[cite: 1]</p>
+
+        <h2>4. Autorisations Requises</h2>
+        <p>L'application nécessite l'accès à l'appareil photo (uniquement pour les photos des médicaments), au stockage (pour la sauvegarde des données) et au système d'alarme (pour les notifications). Ces autorisations sont utilisées exclusivement aux fins décrites.[cite: 1]</p>
+
+        <h2>5. Suppression des Données</h2>
+        <p>S'agissant d'un stockage local, l'utilisateur a le contrôle total de ses données. La désinstallation de l'application supprimera définitivement de l'appareil toutes les données de santé et les images stockées.[cite: 1]</p>
+
+        <div class="deletion-box">
+            <h2 style="margin-top:0; color: #c2410c;">Instructions pour la Suppression des Données</h2>
+            <p>Puisque l'application ne stocke aucune donnée sur des serveurs externes, aucune demande manuelle n'est requise. Pour supprimer instantanément toutes vos données :[cite: 1]</p>
+            <ul>
+                <li>Désinstallez l'application de votre appareil.[cite: 1]</li>
+                <li>Ou allez dans <em>Paramètres de l'appareil &gt; Applications &gt; MedTracker &gt; Stockage &gt; Effacer les données</em>.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script>
+    function setLanguage(lang) {
+        // Nascondi tutti i blocchi lingua
+        document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
+        document.querySelectorAll('.lang-btn').forEach(el => el.classList.remove('active'));
+        
+        // Mostra il blocco e il bottone selezionato
+        const selectedLang = document.getElementById('lang-' + lang) ? lang : 'it';
+        document.getElementById('lang-' + selectedLang).classList.add('active');
+        document.getElementById('btn-' + selectedLang).classList.add('active');
+    }
+
+    // Rilevamento automatico lingua browser
+    const userLang = navigator.language || navigator.userLanguage; 
+    if (userLang.startsWith('en')) { setLanguage('en'); }
+    else if (userLang.startsWith('es')) { setLanguage('es'); }
+    else if (userLang.startsWith('fr')) { setLanguage('fr'); }
+    else { setLanguage('it'); }
+</script>
+
 </body>
 </html>
