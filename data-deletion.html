@@ -3,29 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Richiesta Eliminazione Dati - RegistraLaPillola</title>
+    <title>Data Deletion / Eliminazione Dati - MedTracker / RegistraLaPillola</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; }
-        h1, h2 { color: #d32f2f; }
-        .box { background: #fff3e0; border-left: 4px solid #ff9800; padding: 15px; margin-bottom: 20px; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+            line-height: 1.6; 
+            color: #2c3e50; 
+            max-width: 850px; 
+            margin: 0 auto; 
+            padding: 20px; 
+            background-color: #f8f9fa;
+        }
+        .container {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .lang-picker {
+            display: flex;
+            justify-content: flex-end;
+            gap: 8px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+        .lang-btn {
+            background: #edf2f7;
+            border: 1px solid #cbd5e1;
+            padding: 6px 14px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            color: #475569;
+            transition: all 0.2s ease;
+        }
+        .lang-btn:hover { background: #e2e8f0; }
+        .lang-btn.active {
+            background: #f97316;
+            color: #ffffff;
+            border-color: #f97316;
+        }
+        h1 { color: #ea580c; font-size: 26px; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-top: 0; }
+        h2 { color: #1e293b; font-size: 18px; margin-top: 25px; }
+        .author { color: #64748b; font-style: italic; margin-bottom: 20px; }
+        .info-box {
+            background: #fff7ed;
+            border-left: 4px solid #f97316;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 8px; }
+        .lang-content { display: none; }
+        .lang-content.active { display: block; }
     </style>
 </head>
 <body>
-    <h1>Eliminazione dei Dati - RegistraLaPillola</h1>
-    
-    <div class="box">
-        <h3>Gestione Locale dei Dati</h3>
-        <p>L'applicazione <strong>RegistraLaPillola (MedTracker)</strong> non memorizza alcun dato personale o sanitario su server remoti o cloud proprietari. Tutti i tuoi dati (nomi dei farmaci, orari, note, cronologia e fotografie) risiedono esclusivamente nella memoria locale del tuo smartphone.</p>
+
+<div class="container">
+    <!-- Language Selector -->
+    <div class="lang-picker">
+        <button class="lang-btn" onclick="setLanguage('it')" id="btn-it">🇮🇹 Italiano</button>
+        <button class="lang-btn" onclick="setLanguage('en')" id="btn-en">🇬🇧 English</button>
+        <button class="lang-btn" onclick="setLanguage('es')" id="btn-es">🇪🇸 Español</button>
+        <button class="lang-btn" onclick="setLanguage('fr')" id="btn-fr">🇫🇷 Français</button>
     </div>
 
-    <h2>Come eliminare i tuoi dati sanitari</h2>
-    <p>Poiché i dati non lasciano mai il tuo telefono, hai il pieno controllo della loro eliminazione in qualsiasi momento:</p>
-    <ul>
-        <li><strong>Eliminazione totale:</strong> Ti basta <strong>disinstallare l'applicazione</strong> dal tuo dispositivo Android. Questo rimuoverà all'istante e in modo permanente il database locale e tutte le immagini salvate.</li>
-        <li><strong>Cancellazione manuale:</strong> Puoi andare nelle impostazioni del tuo smartphone: <em>Impostazioni &gt; App &gt; RegistraLaPillola &gt; Spazio di archiviazione &gt; Cancella dati</em>.</li>
-    </ul>
+    <!-- ITALIANO -->
+    <div id="lang-it" class="lang-content">
+        <h1>Eliminazione dei Dati - RegistraLaPillola</h1>
+        <div class="author">Applicazione RegistraLaPillola (MedTracker) — A cura di Giuseppe Giudice</div>
 
-    <h2>Dati Tecnici e Diagnostica</h2>
-    <p>I dati tecnici anonimi relativi ai crash dell'app (Firebase Crashlytics) non contengono informazioni identificative e vengono eliminati automaticamente dai sistemi Google secondo i loro cicli di conservazione standard.</p>
+        <div class="info-box">
+            <h3>Gestione Locale dei Dati</h3>
+            <p>L'applicazione <strong>RegistraLaPillola</strong> non memorizza alcun dato personale o sanitario su server remoti o cloud proprietari. Tutti i tuoi dati (nomi dei farmaci, orari, note, cronologia e fotografie) risiedono esclusivamente nella memoria locale del tuo smartphone.</p>
+        </div>
+
+        <h2>Come eliminare i tuoi dati sanitari e personali</h2>
+        <p>Poiché i dati non lasciano mai il tuo telefono, hai il pieno controllo della loro eliminazione in qualsiasi momento senza dover inviare una richiesta scritta:</p>
+        <ul>
+            <li><strong>Eliminazione totale:</strong> Ti basta <strong>disinstallare l'applicazione</strong> dal tuo dispositivo Android. Questo rimuoverà all'istante e in modo permanente il database locale e tutte le immagini salvate.</li>
+            <li><strong>Cancellazione manuale dalle impostazioni:</strong> Puoi andare nelle impostazioni del tuo smartphone: <em>Impostazioni &gt; App &gt; RegistraLaPillola &gt; Spazio di archiviazione &gt; Cancella dati</em>.</li>
+        </ul>
+
+        <h2>Dati Tecnici e Diagnostica</h2>
+        <p>I dati tecnici anonimi relativi agli errori (Firebase Crashlytics) e le statistiche d'uso aggregate (Google Analytics) non contengono informazioni identificative e vengono eliminati automaticamente dai sistemi Google secondo i loro cicli di conservazione standard.</p>
+    </div>
+
+    <!-- ENGLISH -->
+    <div id="lang-en" class="lang-content">
+        <h1>Data Deletion - MedTracker</h1>
+        <div class="author">MedTracker Application ("RegistraLaPillola") — By Giuseppe Giudice</div>
+
+        <div class="info-box">
+            <h3>Local Data Management</h3>
+            <p>The <strong>MedTracker</strong> application does not store any personal or health data on remote servers or proprietary cloud infrastructure. All your data (medication names, schedules, notes, history, and photos) resides exclusively in your smartphone's local memory.</p>
+        </div>
+
+        <h2>How to delete your health and personal data</h2>
+        <p>Since your data never leaves your phone, you have full control over its deletion at any time without needing to submit a manual request:</p>
+        <ul>
+            <li><strong>Complete Deletion:</strong> Simply <strong>uninstall the application</strong> from your Android device. This will instantly and permanently remove the local database and all stored images.</li>
+            <li><strong>Manual Data Clear:</strong> You can navigate to your phone settings: <em>Settings &gt; Apps &gt; MedTracker &gt; Storage &gt; Clear Data</em>.</li>
+        </ul>
+
+        <h2>Technical Data and Diagnostics</h2>
+        <p>Anonymous technical error reports (Firebase Crashlytics) and aggregated usage statistics (Google Analytics) contain no personally identifiable information and are automatically purged by Google systems according to their standard retention cycles.</p>
+    </div>
+
+    <!-- ESPAÑOL -->
+    <div id="lang-es" class="lang-content">
+        <h1>Eliminación de Datos - MedTracker</h1>
+        <div class="author">Aplicación MedTracker ("RegistraLaPillola") — Por Giuseppe Giudice</div>
+
+        <div class="info-box">
+            <h3>Gestión Local de Datos</h3>
+            <p>La aplicación <strong>MedTracker</strong> no almacena ningún dato personal o de salud en servidores remotos ni en infraestructuras en la nube. Todos sus datos (nombres de medicamentos, horarios, notas, historial y fotografías) residen exclusivamente en la memoria local de su teléfono.</p>
+        </div>
+
+        <h2>Cómo eliminar sus datos personales y de salud</h2>
+        <p>Dado que sus datos nunca salen de su teléfono, usted tiene el control total sobre su eliminación en cualquier momento, sin necesidad de enviar una solicitud manual:</p>
+        <ul>
+            <li><strong>Eliminación Total:</strong> Simplemente <strong>desinstale la aplicación</strong> de su dispositivo Android. Esto eliminará de forma instantánea y permanente la base de datos local y todas las imágenes guardadas.</li>
+            <li><strong>Borrado manual desde ajustes:</strong> Puede ir a los ajustes de su teléfono: <em>Ajustes &gt; Aplicaciones &gt; MedTracker &gt; Almacenamiento &gt; Borrar datos</em>.</li>
+        </ul>
+
+        <h2>Datos Técnicos y Diagnóstico</h2>
+        <p>Los informes técnicos anónimos de errores (Firebase Crashlytics) y las estadísticas agregadas de uso (Google Analytics) no contienen información de identificación personal y los sistemas de Google los eliminan automáticamente según sus ciclos estándar de conservación.</p>
+    </div>
+
+    <!-- FRANÇAIS -->
+    <div id="lang-fr" class="lang-content">
+        <h1>Suppression des Données - MedTracker</h1>
+        <div class="author">Application MedTracker (« RegistraLaPillola ») — Par Giuseppe Giudice</div>
+
+        <div class="info-box">
+            <h3>Gestion Locale des Données</h3>
+            <p>L'application <strong>MedTracker</strong> ne stocke aucune donnée personnelle ou de santé sur des serveurs distants ou des infrastructures cloud. Toutes vos données (noms des médicaments, horaires, notes, historique et photos) résident exclusivement dans la mémoire locale de votre smartphone.</p>
+        </div>
+
+        <h2>Comment supprimer vos données personnelles et de santé</h2>
+        <p>Puisque vos données ne quittent jamais votre téléphone, vous avez le contrôle total sur leur suppression à tout moment sans avoir à soumettre de demande manuelle :</p>
+        <ul>
+            <li><strong>Suppression Totale :</strong> Il vous suffit de <strong>désinstaller l'application</strong> de votre appareil Android. Cela supprimera instantanément et définitivement la base de données locale et toutes les images stockées.</li>
+            <li><strong>Effacement manuel :</strong> Vous pouvez aller dans les paramètres de votre téléphone : <em>Paramètres &gt; Applications &gt; MedTracker &gt; Stockage &gt; Effacer les données</em>.</li>
+        </ul>
+
+        <h2>Données Techniques et Diagnostics</h2>
+        <p>Les rapports d'erreurs techniques anonymes (Firebase Crashlytics) et les statistiques d'utilisation agrégées (Google Analytics) ne contiennent aucune information d'identification personnelle et sont automatiquement purgés par les systèmes de Google selon leurs cycles de conservation standard.</p>
+    </div>
+</div>
+
+<script>
+    function setLanguage(lang) {
+        document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
+        document.querySelectorAll('.lang-btn').forEach(el => el.classList.remove('active'));
+        
+        const selectedLang = document.getElementById('lang-' + lang) ? lang : 'it';
+        document.getElementById('lang-' + selectedLang).classList.add('active');
+        document.getElementById('btn-' + selectedLang).classList.add('active');
+    }
+
+    const userLang = navigator.language || navigator.userLanguage; 
+    if (userLang.startsWith('en')) { setLanguage('en'); }
+    else if (userLang.startsWith('es')) { setLanguage('es'); }
+    else if (userLang.startsWith('fr')) { setLanguage('fr'); }
+    else { setLanguage('it'); }
+</script>
+
 </body>
 </html>
